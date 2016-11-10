@@ -11,12 +11,12 @@
     <% @cocktail.doses.each do |dose| %>
       <% unless dose.id.nil? %>
         <div class="row">
-          <div class="col-xs-9">
+          <div class="col-xs-10">
             <strong><%= dose.ingredient.name %></strong>
             <%= dose.description %>
           </div>
-          <div class="col-xs-3">
-            <%= link_to "Delete",  cocktail_dose_path(@cocktail, dose), {class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" }} %>
+          <div class="col-xs-2">
+            <%= link_to "&times".html_safe, dose_path(dose), {class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" }} %>
           </div>
         </div>
       <% end %>

@@ -1,7 +1,7 @@
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.error_notification message: 'Please fill all the fields below' %>
 
-<%= f.input :ingredient, collection: @ingredients, prompt: "Select" %>
+<%= f.association :ingredient, prompt: "Select" %>
 <%= f.input :description, placeholder: "Describe (quantity, etc.)" %>
 
 <%= f.button :submit %>

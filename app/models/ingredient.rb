@@ -3,5 +3,5 @@ class Ingredient < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  scope :ordered, -> { all.sort_by { |ingredient| ingredient.name.downcase } }
+  default_scope -> { order(name: :ASC) }
 end
