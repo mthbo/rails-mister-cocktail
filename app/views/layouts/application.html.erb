@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsMisterCocktail</title>
+    <title><%= yield(:title).blank? ? "Mr. Cocktail" : yield(:title) %> | Mr. Cocktail</title>
+    <%= csrf_meta_tags %>
     <%= csrf_meta_tags %>
 
     <!-- Add these line for detecting device width -->
@@ -13,6 +14,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "shared/navbar" %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

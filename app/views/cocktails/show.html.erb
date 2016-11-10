@@ -1,0 +1,28 @@
+<% content_for :title do %>
+  <%= @cocktail.name %>
+<% end %>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+
+    <h1><%= @cocktail.name %></h1>
+    <hr>
+
+    <% @cocktail.doses.each do |dose| %>
+      <div class="row">
+        <div class="col-xs-9">
+          <strong><%= dose.ingredient.name %></strong>
+          <%= dose.description %>
+        </div>
+        <div class="col-xs-3">
+          <%= link_to "Delete",  cocktail_dose_path(@cocktail, dose), {class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" }} %>
+        </div>
+      </div>
+      <hr>
+    <% end %>
+
+    <div>
+      <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), {class: "btn btn-default"} %>
+    </div>
+  </div>
+</div>

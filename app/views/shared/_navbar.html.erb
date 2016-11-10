@@ -1,0 +1,15 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to root_path do %>
+    <button class="btn btn-default btn-lg">
+      <i class="fa fa-glass" aria-hidden="true"></i>  <span>Cocktail list</span>
+    </button>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <%= link_to "New cocktail", new_cocktail_path, class: "navbar-wagon-item navbar-wagon-button btn"  %>
+
+  </div>
+</div>

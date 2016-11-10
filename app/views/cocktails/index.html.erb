@@ -1,1 +1,18 @@
-<h1>Cocktails</h1>
+<% content_for :title do %>
+  <%= "Cocktail list" %>
+<% end %>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h1>Cocktails</h1>
+
+    <div class="list-group">
+      <% @cocktails.each do |cocktail| %>
+        <%= link_to cocktail_path(cocktail), {class: "list-group-item"} do %>
+          <strong><%= cocktail.name %></strong>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

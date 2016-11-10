@@ -1,0 +1,7 @@
+<%= simple_form_for(@cocktail) do |f| %>
+  <%= f.error_notification message: 'Please fill all the fields below' %>
+
+  <%= f.input :name, placeholder: "Cocktail name" %>
+
+  <%= f.button :submit %>
+<% end %>

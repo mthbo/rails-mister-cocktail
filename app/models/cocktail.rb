@@ -2,5 +2,6 @@ class Cocktail < ApplicationRecord
   has_many :doses, dependent: :destroy
   has_many :ingredients, through: :doses
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: { message: "The cocktail must have a name" }
+  validates :name, uniqueness: { message: "The cocktail already exists" }
 end
