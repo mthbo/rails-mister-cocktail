@@ -3,17 +3,21 @@
 <% end %>
 
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-
-    <h1><%= @cocktail.name %></h1>
+    <div class= "col-xs-12">
+      <h1><%= @cocktail.name %></h1>
     <hr>
+    </div>
     <div class="text-center">
       <% if @cocktail.photo? %>
         <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
       <% end %>
     </div>
-    <hr>
+</div>
 
+<hr>
+
+<div class="row">
+  <div class="col-sm-6">
     <% @cocktail.doses.each do |dose| %>
       <% unless dose.id.nil? %>
         <div class="row">
@@ -28,10 +32,44 @@
         <hr>
       <% end %>
     <% end %>
+  </div>
 
-    <div>
-      <h2>Add an ingredient</h2>
-      <%= render 'doses/form' %>
-    </div>
+  <div class="col-sm-4 col-sm-offset-2">
+    <h3>Add an ingredient</h3>
+    <%= render 'doses/form' %>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <h3>Reviews</h3>
+    <hr>
+
+    <% @cocktail.reviews.each do |review| %>
+      <% unless review.rating.nil? %>
+        <div class="row">
+          <div class="col-sm-2">
+            <% (review.rating).times do %>
+              <i class="fa fa-star yellow" aria-hidden="true"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="fa fa-star gray" aria-hidden="true"></i>
+            <% end %>
+          </div>
+          <div class="col-sm-10">
+            <%= review.content %>
+          </div>
+        </div>
+        <hr>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <%= render 'reviews/form' %>
   </div>
 </div>

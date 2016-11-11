@@ -1,0 +1,10 @@
+<%= simple_form_for [@cocktail, @review] do |f| %>
+  <%= f.error_notification message: 'Please fill all the fields below' %>
+
+  <%= f.input :content, as: :text, placeholder: "Type your comment here", label: 'New review' %>
+  <%= f.input :rating, collection: 0..5, as: :radio_buttons, label: false, item_label_class: "radio-inline", item_wrapper_tag: false %>
+
+  <%= f.button :submit, "Add a review", class: "btn btn-success" %>
+<% end %>
+
+

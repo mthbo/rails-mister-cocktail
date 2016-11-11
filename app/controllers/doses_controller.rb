@@ -9,6 +9,7 @@ class DosesController < ApplicationController
       flash[:notice] = "#{@dose.ingredient.name} has been added to #{@cocktail.name}"
       redirect_to cocktail_path(@cocktail)
     else
+      @review = @cocktail.reviews.new
       render "cocktails/show"
     end
   end
