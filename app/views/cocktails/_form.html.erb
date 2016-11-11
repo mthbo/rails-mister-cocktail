@@ -2,6 +2,7 @@
   <%= f.error_notification message: 'Please fill all the fields below' %>
 
   <%= f.input :name, placeholder: "Cocktail name" %>
+  <%= f.input :photo, as: :attachinary %>
 
   <%= f.button :submit %>
 <% end %>
