@@ -7,9 +7,11 @@
 
     <h1><%= @cocktail.name %></h1>
     <hr>
-    <% if @cocktail.photo? %>
-      <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
-    <% end %>
+    <div class="text-center">
+      <% if @cocktail.photo? %>
+        <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
+      <% end %>
+    </div>
     <hr>
 
     <% @cocktail.doses.each do |dose| %>
@@ -17,14 +19,14 @@
         <div class="row">
           <div class="col-xs-10">
             <strong><%= dose.ingredient.name %></strong>
-            <%= dose.description %>
+            - <%= dose.description %>
           </div>
           <div class="col-xs-2">
             <%= link_to "&times".html_safe, dose_path(dose), {class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" }} %>
           </div>
         </div>
+        <hr>
       <% end %>
-      <hr>
     <% end %>
 
     <div>

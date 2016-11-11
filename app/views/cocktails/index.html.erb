@@ -9,9 +9,16 @@
     <div class="list-group">
       <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail_path(cocktail), {class: "list-group-item"} do %>
+          <% if cocktail.photo? %>
+            <%= cl_image_tag cocktail.photo.path, width: 40, height: 60, crop: :fill %>
+          <% end %>
           <strong><%= cocktail.name %></strong>
         <% end %>
       <% end %>
+    </div>
+
+    <div>
+      <%= link_to "New cocktail", new_cocktail_path, class: "btn btn-danger"  %>
     </div>
 
   </div>
