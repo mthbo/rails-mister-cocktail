@@ -6,6 +6,7 @@ class DosesController < ApplicationController
   def create
     @dose = @cocktail.doses.new(dose_params)
     if @dose.save
+      flash[:notice] = "#{@dose.ingredient.name} has been added to #{@cocktail.name}"
       redirect_to cocktail_path(@cocktail)
     else
       render "cocktails/show"

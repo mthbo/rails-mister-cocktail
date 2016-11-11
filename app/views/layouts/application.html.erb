@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title).blank? ? "Mr. Cocktail" : yield(:title) %> | Mr. Cocktail</title>
+    <title><%= yield_with_default(:title, "Mr. Cocktail") %></title>
     <%= csrf_meta_tags %>
     <%= csrf_meta_tags %>
 
@@ -17,6 +17,7 @@
   <body>
     <%= render "shared/navbar" %>
     <div class="container">
+      <%= render "shared/flash" %>
       <%= yield %>
     </div>
   </body>
