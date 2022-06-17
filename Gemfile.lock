@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/assembler/attachinary.git
-  revision: c1e77b2a8551b0cbb09622f5d5767de421223dfa
+  remote: https://github.com/assembler/attachinary.git
+  revision: 98a895be22edc74b1928ffa3ae116d24bd9818fd
   specs:
     attachinary (1.3.1)
       cloudinary (~> 1.1.0)
@@ -88,7 +88,8 @@ GEM
       activesupport (>= 4.1.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (0.7.0)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
