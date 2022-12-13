@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/assembler/attachinary.git
-  revision: c1e77b2a8551b0cbb09622f5d5767de421223dfa
+  remote: https://github.com/assembler/attachinary.git
+  revision: 98a895be22edc74b1928ffa3ae116d24bd9818fd
   specs:
     attachinary (1.3.1)
       cloudinary (~> 1.1.0)
@@ -73,6 +73,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    crass (1.0.6)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     domain_name (0.5.20161021)
@@ -104,7 +105,8 @@ GEM
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    loofah (2.0.3)
+    loofah (2.19.1)
+      crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
@@ -143,8 +145,8 @@ GEM
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6.0)
-    rails-html-sanitizer (1.0.3)
-      loofah (~> 2.0)
+    rails-html-sanitizer (1.4.4)
+      loofah (~> 2.19, >= 2.19.1)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
